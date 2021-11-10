@@ -58,10 +58,18 @@ describe('caesarCipher', () => {
 
 describe('arrayAnalysis', () => {
     test('actually works', () => {
-        expect(analyzeArray([1, 3, 4, 7, 8, 11])).toBe({
-            average: 34,
+        expect(analyzeArray([1, 3, 4, 7, 8, 11])).toStrictEqual({
+            average: 6,
             min: 1,
             max: 11,
+            length: 6,
+        });
+    });
+    test('works with negative numbers', () => {
+        expect(analyzeArray([5, 22, 48, -10, -24, 55])).toStrictEqual({
+            average: 16,
+            min: -24,
+            max: 55,
             length: 6,
         });
     });
